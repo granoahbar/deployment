@@ -9,7 +9,7 @@ const app = express()
 
 app.use(express.json())
 
-app.use('/', express.static(path.join(__dirname, '../index.html')))
+app.use('/', express.static(path.join(__dirname, '../client/index.html')))
 
 app.post('/register', (req, res) => res.status(200).send('Registered'))
 
