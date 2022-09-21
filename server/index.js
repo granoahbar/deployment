@@ -11,7 +11,9 @@ app.use(express.json())
 
 app.use('/', express.static(path.join(__dirname, '../client/index.html')))
 
-app.post('/register', (req, res) => res.status(200).send('Registered'))
+app.get('/js', (req, res) => {
+    res.sendFile(path.join(__dirname, '../client/main.js'))
+  })
 
 app.listen(port, () => {
     console.log('Docked at port ' + port)
