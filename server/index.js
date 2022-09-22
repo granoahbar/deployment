@@ -18,9 +18,7 @@ var rollbar = new Rollbar({
 
 // record a generic message and send it to Rollbar
 rollbar.log('Hello world!')
-
-// record a generic message and send it to Rollbar
-rollbar.log('Hello world!')
+rollbar.log('Hello!')
 
 app.use('/', express.static(path.join(__dirname, '../client/index.html')))
 
