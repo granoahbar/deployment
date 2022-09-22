@@ -35,6 +35,8 @@ app.listen(port, () => {
   try {
     nonExistentFunction();
   } catch (error) {
+    rollbar.error('No name was provided')
+            res.status(400).send('You must enter a name.')
     console.error(error);
     // expected output: ReferenceError: nonExistentFunction is not defined
     // Note - error messages will vary depending on browser
