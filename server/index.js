@@ -9,17 +9,18 @@ const app = express()
 
 app.use(express.json())
 
-// include and initialize the rollbar library with your access token
 var Rollbar = require('rollbar')
 var rollbar = new Rollbar({
-  accessToken: 'dca1053ba69340078672cd065421849e',
+  accessToken: 'ad87b928e26e4c658a583b40d3243c0f',
   captureUncaught: true,
   captureUnhandledRejections: true,
 })
 
 // record a generic message and send it to Rollbar
 rollbar.log('Hello world!')
-rollbar.log('Cool Beans!')
+
+// record a generic message and send it to Rollbar
+rollbar.log('Hello world!')
 
 app.use('/', express.static(path.join(__dirname, '../client/index.html')))
 
@@ -32,3 +33,5 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
     console.log('Docked at port ' + port)
   })
+
+
