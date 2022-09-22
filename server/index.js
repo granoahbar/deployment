@@ -31,3 +31,11 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
     console.log('Docked at port ' + port)
   })
+
+  try {
+    nonExistentFunction();
+  } catch (error) {
+    console.error(error);
+    // expected output: ReferenceError: nonExistentFunction is not defined
+    // Note - error messages will vary depending on browser
+  }
