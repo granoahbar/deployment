@@ -19,6 +19,7 @@ var rollbar = new Rollbar({
 
 // record a generic message and send it to Rollbar
 rollbar.log('Hello world!')
+rollbar.log('Cool Beans!')
 
 app.use('/', express.static(path.join(__dirname, '../client/index.html')))
 
@@ -31,13 +32,3 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
     console.log('Docked at port ' + port)
   })
-
-  try {
-    nonExistentFunction();
-  } catch (error) {
-    rollbar.error('No name was provided')
-            res.status(400).send('You must enter a name.')
-    console.error(error);
-    // expected output: ReferenceError: nonExistentFunction is not defined
-    // Note - error messages will vary depending on browser
-  }
