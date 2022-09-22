@@ -22,7 +22,7 @@ rollbar.log('Hello world!')
 try {
   nonExistentFunction();
 } catch (error) {
-  rollbar.log('Error');
+  rollbar.error('Error');
 }
 
 app.use('/', express.static(path.join(__dirname, '../client/index.html')))
